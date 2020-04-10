@@ -1,0 +1,31 @@
+.Salad {
+    background: linear-gradient(#00cc44, #00e64d);
+    height: 5%;
+    width: 89%;
+    margin: 2% auto;
+    border-radius: 30px;
+}
+  
+.Bacon {
+    background: linear-gradient(#cc3300, #992600);
+    height: 2%;
+    width: 75%;
+    margin: 2% auto;
+    border-radius: 10px;
+}
+  
+.Cheese {
+    background: linear-gradient(#ffff00 , #e6e600);
+    height: 3%;
+    width: 85%;
+    margin: 2% auto;
+    border-radius: 10px;
+}
+
+.Sausage {
+    background: linear-gradient(#993300 , #662200);
+    height: 6%;
+    width: 70%;
+    margin: 2% auto;
+    border-radius: 15px;
+}
