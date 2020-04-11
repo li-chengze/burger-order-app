@@ -29,7 +29,13 @@ class BurgerBuilder extends Component {
     render() {
         return (
             <div>
-                <Modal checking={this.state.checking} ingredients={this.state.ingredients} />
+                <Modal
+                    checking={this.state.checking}
+                    ingredients={this.state.ingredients}
+                    totalPrice={this.state.totalPrice}
+                    cancelOrderHandler={this.cancelOrderHandler}
+                    continueOrderHandler={this.continueOrderHandler}
+                />
                 <Burger ingredients={this.state.ingredients} />
                 <BuilderControls
                     ingredients={this.state.ingredients}
@@ -85,6 +91,16 @@ class BurgerBuilder extends Component {
         this.setState({
             checking: true,
         });
+    }
+
+    cancelOrderHandler = () => {
+        this.setState({
+            checking: false,
+        })
+    }
+
+    continueOrderHandler = () => {
+        alert("continue order");
     }
 }
 

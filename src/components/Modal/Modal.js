@@ -9,9 +9,9 @@ const modal = props => {
         <div
             className={classes.Modal}
             style={{ transform: props.checking ? "translateY(0)" : "translateY(-100vh)" }}>
-            <OrderSummary ingredients={props.ingredients} />
-            <Button btnType="Danger">Cancel</Button>
-            <Button btnType="Success">Continue</Button>
+            <OrderSummary ingredients={props.ingredients} totalPrice={props.totalPrice} />
+            <Button btnType="Danger" onClick={props.cancelOrderHandler}>Cancel</Button>
+            <Button btnType="Success" onClick={props.continueOrderHandler}>Continue</Button>
         </div>
     );
 }
