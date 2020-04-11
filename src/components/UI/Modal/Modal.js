@@ -2,7 +2,7 @@ import React from 'react';
 import classes from "./Modal.module.css";
 
 import OrderSummary from "../OrderSummary/OrderSummary";
-import Button from "../Button/Button";
+import Button from "../../Burger/Button/Button";
 
 const modal = props => {
     return (

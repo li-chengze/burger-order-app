@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Burger from "../../components/Burger/Burger";
 import BuilderControls from "../../components/BuilderControls/BuilderControls";
-import Modal from "../../components/Modal/Modal";
+import Modal from "../../components/UI/Modal/Modal";
 
 const INGREDIENTS_PRICE = {
     salad: 1.2,
