@@ -1,13 +1,13 @@
 .NavigationItem {
     margin: auto;
-    display: flex;
+    display: block;
     box-sizing: border-box;
-    height: 100%;
-    align-items: center;
+    width: 100%;
+    text-align: left;
 }
 
 .NavigationItem a {
-    color: white;
+    color: #ff8000;
     text-decoration: none;
     height: 100%;
     border-bottom: 4px solid transparent;
@@ -16,9 +16,29 @@
     box-sizing: border-box;
 }
 
-.NavigationItem a:hover,
-.NavigationItem a:active,
-.NavigationItem a.active { 
-    background-color: #ff8000;
-    border-bottom: 4px solid white;
+@media (min-width: 500px) {
+    .NavigationItem {
+        margin: auto;
+        display: flex;
+        box-sizing: border-box;
+        height: 100%;
+        align-items: center;
+    }
+    
+    .NavigationItem a {
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        border-bottom: 4px solid transparent;
+        display: block;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+    
+    .NavigationItem a:hover,
+    .NavigationItem a:active,
+    .NavigationItem a.active { 
+        background-color: #ff8000;
+        border-bottom: 4px solid white;
+    }
 }

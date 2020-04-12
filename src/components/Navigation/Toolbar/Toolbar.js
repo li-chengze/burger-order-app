@@ -9,7 +9,7 @@ const toolbar = props => {
     return (
         <div className={classes.Toolbar}>
             <div>menu</div>
-            <div><Logo /></div>
+            <div className={classes.Logo} ><Logo /></div>
             <nav>
                 <NavigationItems />
             </nav>
