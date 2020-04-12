@@ -23,6 +23,7 @@
         box-sizing: border-box;
         height: 100%;
         align-items: center;
+        width: auto;
     }
     
     .NavigationItem a {
