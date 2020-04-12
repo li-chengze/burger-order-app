@@ -1,11 +1,13 @@
 import React from 'react';
 
 import BurgerBuilder from "../../container/BurgerBuilder/BurgerBuilder"
+import Toolbar from "../../components/Navigation/Toolbar/Toolbar"
+
 const layout = props => {
     return (
         <div>
-            <nav>logo, sidedrawer, burgerbuilder</nav>
-            <div><BurgerBuilder /></div>
+            <Toolbar />
+            <BurgerBuilder />
         </div>
     );
 }

@@ -2,6 +2,7 @@
     height: 500px;
     width: 450px;
     margin: auto;
+    overflow: scroll;
 }
 
 .UpperBread {
@@ -10,7 +11,7 @@
     width: 80%;
     border-radius: 50% 50% 3px 3px;
     box-shadow: inset -15px 1px #804000;
-    margin: 2% auto;
+    margin: 20% auto 2% auto;
 }
 
 .BottomBread {
