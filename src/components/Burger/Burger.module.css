@@ -5,6 +5,12 @@
     overflow: scroll;
 }
 
+@media (max-width: 499px) {
+    .Burger {
+        width: 80%;
+    }
+}
+
 .UpperBread {
     background: linear-gradient(#994d00, #cc6600);
     height: 15%;
