@@ -1,0 +1,7 @@
+.Order {
+    text-align: left;
+    width: 100%;
+    border: 1px solid rgb(199, 199, 199);
+    box-shadow: 1px 3px rgb(202, 201, 201);
+    margin: 10px;
+}

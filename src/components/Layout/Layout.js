@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 
 import BurgerBuilder from "../../container/BurgerBuilder/BurgerBuilder"
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar"
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
+import Orders from '../../container/Orders/Orders';
 
 class Layout extends Component {
     state = {
@@ -16,7 +18,8 @@ class Layout extends Component {
                 <SideDrawer
                     opened={this.state.sideDrawerOpened}
                     closeSideDrawerHandler={this.closeSideDrawerHandler} />
-                <BurgerBuilder />
+                <Route path="/" component={BurgerBuilder} exact></Route>
+                <Route path="/orders" component={Orders}></Route>
             </div>
         );
     }
