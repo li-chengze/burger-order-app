@@ -100,7 +100,7 @@ class BurgerBuilder extends Component {
     }
 
     continueOrderHandler = () => {
-        alert("continue order");
+        this.props.history.push("/checkout");
     }
 }
 

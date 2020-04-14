@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import classes from "./Modal.module.css";
 
 import OrderSummary from "../OrderSummary/OrderSummary";
-import Button from "../../Burger/Button/Button";
+import Button from "../Button/Button";
 import BackDrop from "../BackDrop/BackDrop";
 
 const modal = props => {

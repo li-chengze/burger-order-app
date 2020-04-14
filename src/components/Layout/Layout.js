@@ -5,6 +5,7 @@ import BurgerBuilder from "../../container/BurgerBuilder/BurgerBuilder"
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar"
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Orders from '../../container/Orders/Orders';
+import Checkout from '../../container/Checkout/Checkout';
 
 class Layout extends Component {
     state = {
@@ -20,6 +21,7 @@ class Layout extends Component {
                     closeSideDrawerHandler={this.closeSideDrawerHandler} />
                 <Route path="/" component={BurgerBuilder} exact></Route>
                 <Route path="/orders" component={Orders}></Route>
+                <Route path="/checkout" component={Checkout}></Route>
             </div>
         );
     }

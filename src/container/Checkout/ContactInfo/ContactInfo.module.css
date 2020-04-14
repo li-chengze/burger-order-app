@@ -1,0 +1,10 @@
+.ContactInfo {
+    width: 80%;
+    margin: 50px auto;
+    border: 1px solid rgb(209, 209, 209);
+    box-shadow: 1px 2px rgb(207, 207, 207);
+}
+
+.Field {
+    margin: 5px;
+}
