@@ -2,7 +2,7 @@ import React from 'react';
 import BuilderControl from "./BuilderControl/BuilderControl";
 import classes from "./BuilderControls.module.css";
 
-import { BURGER_BASE_PRICE } from "../../container/BurgerBuilder/BurgerBuilder";
+import { BURGER_BASE_PRICE } from "../../constants";
 
 const builderControls = props => {
 

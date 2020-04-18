@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import classes from "./ContactInfo.module.css";
 
 import Button from "../../../components/UI/Button/Button"
+
 class ContactInfo extends Component {
 
     state = {
