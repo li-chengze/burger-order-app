@@ -5,20 +5,28 @@ import Burger from '../../components/Burger/Burger';
 import Button from '../../components/UI/Button/Button';
 import ContactInfo from './ContactInfo/ContactInfo';
 
+import axios from "../../axios";
+
 class Checkout extends Component {
     state = {
-        ingredients: {
-            salad: 1,
-            bacon: 1,
-            cheese: 1,
-            sausage: 1,
-        },
+        order: {
+            ingredients: {
+                salad: 1,
+                bacon: 1,
+                cheese: 1,
+                sausage: 1,
+            },
+            price: 10,
+            name: "test",
+            mobile: "12345",
+            address: "test address",
+        }
     }
 
     render() {
         return (
             <div>
-                <Burger ingredients={this.state.ingredients} />
+                <Burger ingredients={this.state.order.ingredients} />
                 <Route
                     path={this.props.match.url}
                     exact
@@ -39,7 +47,16 @@ class Checkout extends Component {
                                 Continue
                             </Button>)
                     } />
-                <Route path={this.props.match.url + "/contact-info"} component={ContactInfo} />
+                <Route
+                    path={this.props.match.url + "/contact-info"}
+                    render={
+                        () =>
+                            <ContactInfo
+                                name={this.state.order.name}
+                                mobile={this.state.order.mobile}
+                                address={this.state.order.address}
+                            />
+                    } />
             </div>
         );
     }
@@ -49,7 +66,12 @@ class Checkout extends Component {
     }
 
     continueCheckoutHandler = () => {
-        this.props.history.push(this.props.match.url + "/contact-info");
+        axios.post("/orders.json", this.state.order)
+            .then(response => {
+                console.log(response);
+                this.props.history.push(this.props.match.url + "/contact-info");
+            })
+            .catch(error => alert(error))
     }
 }
 

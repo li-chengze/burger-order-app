@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Burger from "../../components/Burger/Burger";
 import BuilderControls from "../../components/BuilderControls/BuilderControls";
 import Modal from "../../components/UI/Modal/Modal";
+import Spiner from "../../components/UI/Spiner/Spiner";
+
+import axios from '../../axios';
 
 const INGREDIENTS_PRICE = {
     salad: 1.2,
@@ -16,19 +19,24 @@ export const BURGER_BASE_PRICE = 5;
 class BurgerBuilder extends Component {
 
     state = {
-        ingredients: {
-            salad: 0,
-            bacon: 0,
-            cheese: 0,
-            sausage: 0,
-        },
+        ingredients: null,
         totalPrice: BURGER_BASE_PRICE,
         checking: false,
     }
 
+    componentDidMount() {
+        axios.get('/ingredients.json')
+            .then(
+                response => {
+                    this.setState({ ingredients: response.data })
+                })
+            .catch(error => { alert(error) })
+    }
+
     render() {
-        return (
-            <div>
+        let body = <Spiner />;
+        if (this.state.ingredients !== null) {
+            body = <div>
                 <Modal
                     checking={this.state.checking}
                     ingredients={this.state.ingredients}
@@ -44,7 +52,9 @@ class BurgerBuilder extends Component {
                     removeIngredientHandler={this.removeIngredientHandler}
                     clickOrderHandler={this.clickOrderHandler}
                 />
-            </div>);
+            </div>;
+        }
+        return body;
     }
 
     addIngredientHandler = (ingredient) => {
