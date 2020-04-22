@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import queryString from 'query-string';
 
 import Burger from '../../components/Burger/Burger';
 import Button from '../../components/UI/Button/Button';
 import ContactInfo from './ContactInfo/ContactInfo';
 
-import axios from "../../axios";
-
 class Checkout extends Component {
     state = {
         order: {
-            ingredients: {
-                salad: 1,
-                bacon: 1,
-                cheese: 1,
-                sausage: 1,
-            },
+            ingredients: null,
             price: 10,
             name: "test",
             mobile: "12345",
@@ -23,10 +17,24 @@ class Checkout extends Component {
         }
     }
 
+    componentDidMount() {
+        const params = queryString.parse(this.props.location.search);
+        const ingredients = Object.fromEntries(Object.entries(params).map(entry => [entry[0], +entry[1]]));
+        const updatedOrder = {
+            ...this.state.order,
+            ingredients: ingredients
+        };
+        this.setState({ order: updatedOrder });
+    }
+
     render() {
+        const burger =
+            this.state.order.ingredients !== null
+                ? <Burger ingredients={this.state.order.ingredients} />
+                : null;
         return (
             <div>
-                <Burger ingredients={this.state.order.ingredients} />
+                {burger}
                 <Route
                     path={this.props.match.url}
                     exact
@@ -52,9 +60,7 @@ class Checkout extends Component {
                     render={
                         () =>
                             <ContactInfo
-                                name={this.state.order.name}
-                                mobile={this.state.order.mobile}
-                                address={this.state.order.address}
+                                order={this.state.order}
                             />
                     } />
             </div>
@@ -66,12 +72,7 @@ class Checkout extends Component {
     }
 
     continueCheckoutHandler = () => {
-        axios.post("/orders.json", this.state.order)
-            .then(response => {
-                console.log(response);
-                this.props.history.push(this.props.match.url + "/contact-info");
-            })
-            .catch(error => alert(error))
+        this.props.history.push(this.props.match.url + "/contact-info");
     }
 }
 
