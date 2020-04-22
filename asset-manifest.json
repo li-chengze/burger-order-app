@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/li-chengze/burger-order-app/static/css/main.303ff343.chunk.css",
-    "main.js": "/li-chengze/burger-order-app/static/js/main.3dccf2a6.chunk.js",
-    "main.js.map": "/li-chengze/burger-order-app/static/js/main.3dccf2a6.chunk.js.map",
-    "runtime-main.js": "/li-chengze/burger-order-app/static/js/runtime-main.d292c323.js",
-    "runtime-main.js.map": "/li-chengze/burger-order-app/static/js/runtime-main.d292c323.js.map",
-    "static/js/2.e52a0a36.chunk.js": "/li-chengze/burger-order-app/static/js/2.e52a0a36.chunk.js",
-    "static/js/2.e52a0a36.chunk.js.map": "/li-chengze/burger-order-app/static/js/2.e52a0a36.chunk.js.map",
-    "index.html": "/li-chengze/burger-order-app/index.html",
-    "precache-manifest.52d8792d1b0650990b9d5fa7cb5d8a15.js": "/li-chengze/burger-order-app/precache-manifest.52d8792d1b0650990b9d5fa7cb5d8a15.js",
-    "service-worker.js": "/li-chengze/burger-order-app/service-worker.js",
-    "static/css/main.303ff343.chunk.css.map": "/li-chengze/burger-order-app/static/css/main.303ff343.chunk.css.map",
-    "static/js/2.e52a0a36.chunk.js.LICENSE.txt": "/li-chengze/burger-order-app/static/js/2.e52a0a36.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/li-chengze/burger-order-app/static/media/logo.b8503d26.png"
+    "main.css": "/burger-order-app/static/css/main.303ff343.chunk.css",
+    "main.js": "/burger-order-app/static/js/main.6698309f.chunk.js",
+    "main.js.map": "/burger-order-app/static/js/main.6698309f.chunk.js.map",
+    "runtime-main.js": "/burger-order-app/static/js/runtime-main.1ae5e9fe.js",
+    "runtime-main.js.map": "/burger-order-app/static/js/runtime-main.1ae5e9fe.js.map",
+    "static/js/2.e52a0a36.chunk.js": "/burger-order-app/static/js/2.e52a0a36.chunk.js",
+    "static/js/2.e52a0a36.chunk.js.map": "/burger-order-app/static/js/2.e52a0a36.chunk.js.map",
+    "index.html": "/burger-order-app/index.html",
+    "precache-manifest.c008da3a7a3012167b00eac48874011c.js": "/burger-order-app/precache-manifest.c008da3a7a3012167b00eac48874011c.js",
+    "service-worker.js": "/burger-order-app/service-worker.js",
+    "static/css/main.303ff343.chunk.css.map": "/burger-order-app/static/css/main.303ff343.chunk.css.map",
+    "static/js/2.e52a0a36.chunk.js.LICENSE.txt": "/burger-order-app/static/js/2.e52a0a36.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/burger-order-app/static/media/logo.b8503d26.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d292c323.js",
+    "static/js/runtime-main.1ae5e9fe.js",
     "static/js/2.e52a0a36.chunk.js",
     "static/css/main.303ff343.chunk.css",
-    "static/js/main.3dccf2a6.chunk.js"
+    "static/js/main.6698309f.chunk.js"
   ]
 }
