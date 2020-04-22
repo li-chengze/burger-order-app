@@ -4,6 +4,9 @@ import Burger from "../../components/Burger/Burger";
 import BuilderControls from "../../components/BuilderControls/BuilderControls";
 import Modal from "../../components/UI/Modal/Modal";
 import * as actionTypes from "../../store/actions/actionTypes";
+import Spiner from "../../components/UI/Spiner/Spiner";
+
+import axios from '../../axios';
 
 import { connect } from 'react-redux';
 
@@ -13,9 +16,19 @@ class BurgerBuilder extends Component {
         checking: false,
     }
 
+    componentDidMount() {
+        axios.get('/ingredients.json')
+            .then(
+                response => {
+                    this.setState({ ingredients: response.data })
+                })
+            .catch(error => { alert(error) })
+    }
+
     render() {
-        return (
-            <div>
+        let body = <Spiner />;
+        if (this.state.ingredients !== null) {
+            body = <div>
                 <Modal
                     checking={this.state.checking}
                     ingredients={this.props.ingredients}
@@ -31,7 +44,9 @@ class BurgerBuilder extends Component {
                     removeIngredientHandler={this.removeIngredientHandler}
                     clickOrderHandler={this.clickOrderHandler}
                 />
-            </div>);
+            </div>;
+        }
+        return body;
     }
 
     addIngredientHandler = (ingredient) => {
@@ -55,7 +70,16 @@ class BurgerBuilder extends Component {
     }
 
     continueOrderHandler = () => {
-        this.props.history.push("/checkout");
+        const queryParams =
+            Object.keys(this.state.ingredients)
+                .map(ingredient =>
+                    encodeURIComponent(ingredient) + "=" + encodeURIComponent(this.state.ingredients[ingredient]));
+        const queryString = queryParams.join("&");
+
+        this.props.history.push({
+            pathname: "/checkout",
+            search: "?" + queryString,
+        });
     }
 }
 
