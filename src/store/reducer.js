@@ -56,6 +56,9 @@ const reducers = (state = initialState, action) => {
                 totalPrice: newPrice,
             }
         }
+        case actionTypes.RESET_INGREDIENTS: {
+            return initialState
+        }
         default: return state;
     }
 }

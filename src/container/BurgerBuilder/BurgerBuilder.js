@@ -27,7 +27,7 @@ class BurgerBuilder extends Component {
 
     render() {
         let body = <Spiner />;
-        if (this.state.ingredients !== null) {
+        if (this.props.ingredients !== null) {
             body = <div>
                 <Modal
                     checking={this.state.checking}
@@ -71,9 +71,9 @@ class BurgerBuilder extends Component {
 
     continueOrderHandler = () => {
         const queryParams =
-            Object.keys(this.state.ingredients)
+            Object.keys(this.props.ingredients)
                 .map(ingredient =>
-                    encodeURIComponent(ingredient) + "=" + encodeURIComponent(this.state.ingredients[ingredient]));
+                    encodeURIComponent(ingredient) + "=" + encodeURIComponent(this.props.ingredients[ingredient]));
         const queryString = queryParams.join("&");
 
         this.props.history.push({

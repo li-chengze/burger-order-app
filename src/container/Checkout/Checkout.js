@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import queryString from 'query-string';
 
 import Burger from '../../components/Burger/Burger';
 import Button from '../../components/UI/Button/Button';
 import ContactInfo from './ContactInfo/ContactInfo';
+import { connect } from 'react-redux';
 
 class Checkout extends Component {
     state = {
@@ -18,11 +18,9 @@ class Checkout extends Component {
     }
 
     componentDidMount() {
-        const params = queryString.parse(this.props.location.search);
-        const ingredients = Object.fromEntries(Object.entries(params).map(entry => [entry[0], +entry[1]]));
         const updatedOrder = {
             ...this.state.order,
-            ingredients: ingredients
+            ingredients: this.props.ingredients
         };
         this.setState({ order: updatedOrder });
     }
@@ -76,4 +74,10 @@ class Checkout extends Component {
     }
 }
 
-export default Checkout;
+const mapStateToProps = (state) => {
+    return {
+        ingredients: state.ingredients
+    }
+}
+
+export default connect(mapStateToProps)(Checkout);
